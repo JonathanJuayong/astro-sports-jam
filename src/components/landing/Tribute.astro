@@ -1,0 +1,52 @@
+---
+import Badge from '../Badge.astro'
+---
+
+<section class="py-20 md:py-32">
+  <div class="container px-4 mx-auto">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col gap-12 justify-between -mx-4 items-center">
+        <div class="mx-auto px-4 mb-16 lg:mb-0">
+          <div class="max-w-lg mx-auto lg:mx-0 lg:text-center">
+            <Badge> TRIBUTE </Badge>
+            <h2
+              class="font-heading text-4xl xs:text-6xl md:text-7xl font-bold mb-16"
+            >
+              In Memory of
+              <span class="font-serif italic">Jam</span>
+              &
+              <span class="font-serif italic">Rie</span>
+            </h2>
+            <p class="text-xl text-gray-500 font-semibold leading-9 mb-4">
+              This initiative was launched to honour the memories of Jam and Rie
+              who tragically passed away in 2017. If you have five minutes to
+              spare, we invite you to watch this video tribute to two beautiful
+              children.
+            </p>
+            <p class="text-xl text-gray-500 font-semibold leading-9">
+              For Jam and Rie, we move. Together, we move.
+            </p>
+          </div>
+        </div>
+        <div class="px-0 lg:self-stretch">
+          <iframe
+            class="aspect-video w-full lg:h-[45rem]"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/7-r305_ZmUo?si=mwNurSJKS4BPMHI4"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  iframe {
+    display: block;
+    margin: 0 auto;
+  }
+</style>

@@ -1,0 +1,150 @@
+---
+interface Props {
+  thumbnailSrc: string
+  name: string
+  date: string
+  time: string
+  address: string
+  isFinished?: boolean
+  href: string
+}
+
+const {
+  thumbnailSrc,
+  name,
+  date,
+  time,
+  address,
+  isFinished = false,
+  href,
+} = Astro.props
+---
+
+<div
+  class:list={[
+    'py-8 px-4 border-t-2 border-gray-100',
+    { 'bg-gray-50 ': isFinished },
+    { 'rounded-2xl': isFinished },
+    { 'cursor-not-allowed': isFinished },
+  ]}
+>
+  <div class="flex flex-wrap lg:flex-nowrap items-center">
+    <div
+      class:list={[
+        'w-full lg:w-auto px-4 mb-8 lg:mb-0',
+        { grayscale: isFinished },
+      ]}
+    >
+      <img class="block w-44 h-30" src={thumbnailSrc} alt="" />
+    </div>
+    <div class="w-full lg:w-9/12 px-4 mb-10 lg:mb-0">
+      <div class="max-w-2xl">
+        <p
+          class:list={[
+            'text-4xl font-semibold mb-4',
+            { 'text-gray-300': isFinished },
+            { 'text-gray-900': !isFinished },
+          ]}
+        >
+          {name}
+        </p>
+        <p class="mb-2 text-gray-600 flex items-start gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M8 2v4"> </path>
+            <path d="M16 2v4"> </path>
+            <rect width="18" height="18" x="3" y="4" rx="2"> </rect>
+            <path d="M3 10h18"> </path>
+            <path d="M8 14h.01"> </path>
+            <path d="M12 14h.01"> </path>
+            <path d="M16 14h.01"> </path>
+            <path d="M8 18h.01"> </path>
+            <path d="M12 18h.01"> </path>
+            <path d="M16 18h.01"> </path>
+          </svg>
+          {date}
+        </p>
+        <p class="mb-2 text-gray-600 flex items-start gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-clock-5"
+          >
+            <circle cx="12" cy="12" r="10"> </circle>
+            <polyline points="12 6 12 12 14.5 16"> </polyline>
+          </svg>
+          {time}
+        </p>
+        <p class="mb-2 text-gray-600 flex items-start gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-map-pin min-w-[20px]"
+          >
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"> </path>
+            <circle cx="12" cy="10" r="3"> </circle>
+          </svg>
+          {address}
+        </p>
+      </div>
+    </div>
+    {
+      !isFinished && (
+        <div class="w-full lg:w-auto px-4 ml-auto text-right">
+          <a
+            class="inline-flex items-center text-xl font-semibold text-orange-900 hover:text-gray-900"
+            href={'events/' + href}
+          >
+            <span class="mr-2">View</span>
+            <svg
+              class="animate-bounce"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.33301 14.6668L14.6663 1.3335"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M1.33301 1.3335H14.6663V14.6668"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      )
+    }
+  </div>
+</div>

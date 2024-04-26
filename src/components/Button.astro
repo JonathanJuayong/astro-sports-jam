@@ -1,0 +1,38 @@
+---
+type Props = {
+  text: string
+  type?: 'primary' | 'secondary' | 'tertiary'
+  class?: string
+  isAnchor?: boolean
+  href?: string
+}
+
+const {
+  isAnchor = false,
+  href = '#',
+  text,
+  type = 'primary',
+  class: classes = '',
+} = Astro.props
+const baseStyle: Record<typeof type, string> = {
+  primary: 'bg-primary text-white',
+  secondary: 'bg-blue-900 text-white',
+  tertiary: 'bg-gray-5 text-black',
+}
+const buttonStyle =
+  'px-6 py-4 rounded-md text-center font-bold' +
+  ' ' +
+  baseStyle[type] +
+  ' ' +
+  classes
+---
+
+{
+  isAnchor ? (
+    <a class={buttonStyle} {href}>
+      {text}
+    </a>
+  ) : (
+    <button class={buttonStyle}>{text}</button>
+  )
+}

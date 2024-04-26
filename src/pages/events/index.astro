@@ -1,0 +1,87 @@
+---
+import Badge from '../../components/Badge.astro'
+import EventCard from '../../components/EventCard.astro'
+import MainLayout from '../../components/layout/MainLayout.astro'
+---
+
+<MainLayout title="Events">
+  <section class="relative py-20 overflow-hidden">
+    <img
+      class="absolute top-0 right-0 xl:mt-10 -mr-24 lg:-mr-0"
+      src="saturn-assets/images/blog/star-circle-right.svg"
+      alt=""
+    />
+    <img
+      class="hidden sm:block absolute bottom-0 left-0 -mb-48 lg:mb-0"
+      src="saturn-assets/images/blog/blue-light-left.png"
+      alt=""
+    />
+    <div class="relative container px-4 mx-auto">
+      <div class="max-w-2xl mx-auto mb-15 text-center">
+        <Badge>Events</Badge>
+        <h1 class="font-heading text-5xl xs:text-6xl md:text-7xl font-bold">
+          Our Latest
+          <span class="font-serif italic">Events</span>
+        </h1>
+      </div>
+      <div class="max-w-5xl mx-auto">
+        <h2 class="px-4 font-heading text-4xl pt-12 pb-8">Incoming</h2>
+        <div class="grid gap-8">
+          <EventCard
+            thumbnailSrc="saturn-assets/images/blog/image-blog-small-1.png"
+            name="Sports Jam 2024"
+            date="20 September 2024"
+            time="11am to 3pm"
+            address="Hibiscus Sports Complex, 90 Klumpp Rd, Upper Mount Gravatt."
+            href="sports-jam-2024"
+          />
+          <div class="pt-12 border-t-2 border-gray-100 text-center">
+            <a
+              class="relative group inline-block py-4 px-7 font-semibold text-orange-900 hover:text-orange-50 rounded-full bg-orange-50 transition duration-300 overflow-hidden"
+              href="#"
+            >
+              <div
+                class="absolute top-0 right-full w-full h-full bg-gray-900 transform group-hover:translate-x-full group-hover:scale-102 transition duration-500"
+              >
+              </div>
+              <span class="relative">View More</span>
+            </a>
+          </div>
+        </div>
+        <h2 class="px-4 font-heading text-4xl pt-12 pb-8">Previous Events</h2>
+        <div class="grid gap-8">
+          <EventCard
+            thumbnailSrc="saturn-assets/images/blog/image-blog-small-2.png"
+            name="Sports Jam 2020"
+            date="20 September 2020"
+            time="11am to 3pm"
+            address="Hibiscus Sports Complex, 90 Klumpp Rd, Upper Mount Gravatt."
+            isFinished
+            href="sports-jam-2020"
+          />
+          <EventCard
+            thumbnailSrc="saturn-assets/images/blog/image-blog-small-3.png"
+            name="Sports Jam 2018"
+            date="20 September 2018"
+            time="11am to 3pm"
+            address="Hibiscus Sports Complex, 90 Klumpp Rd, Upper Mount Gravatt."
+            isFinished
+            href="sports-jam-2018"
+          />
+          <div class="pt-12 border-t-2 border-gray-100 text-center">
+            <a
+              class="relative group inline-block py-4 px-7 font-semibold text-orange-900 hover:text-orange-50 rounded-full bg-orange-50 transition duration-300 overflow-hidden"
+              href="#"
+            >
+              <div
+                class="absolute top-0 right-full w-full h-full bg-gray-900 transform group-hover:translate-x-full group-hover:scale-102 transition duration-500"
+              >
+              </div>
+              <span class="relative">View More</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

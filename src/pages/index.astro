@@ -1,0 +1,35 @@
+---
+import Hero from '../components/landing/Hero.astro'
+import About from '../components/landing/About.astro'
+import Tribute from '../components/landing/Tribute.astro'
+import Testimonials from '../components/landing/Testimonials.astro'
+import CallToAction from '../components/landing/CallToAction.astro'
+import MainLayout from '../components/layout/MainLayout.astro'
+import type { Testimonial } from '../types'
+
+const testimonials: Testimonial[] = [
+  {
+    author: 'Jane Lamont',
+    quote:
+      'Fantastic experience for the kids, nothing else like it! Also, such an inspiring story behind this concept.',
+  },
+  {
+    author: 'Kym Marie Blaylock',
+    quote:
+      'I was there to honour Jam and had a great day. And will definitely be spreading the word and love of sports.',
+  },
+  {
+    author: 'Teresa Render',
+    quote:
+      'Such a wonderful legacy to come out of such tragic circumstances. We are excited to continue to support this exellent concept.',
+  },
+]
+---
+
+<MainLayout title="Home">
+  <Hero />
+  <About />
+  <Tribute />
+  <Testimonials testimonials={testimonials} />
+  <CallToAction />
+</MainLayout>
